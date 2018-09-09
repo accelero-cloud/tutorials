@@ -39,7 +39,7 @@ def timeit(wrapped_function, instance, args, kw):
     ts = timer()
     result = wrapped_function(*args, **kw)
     te = timer()
-    print '>> Audit time: %r  %2.2f ms' % (wrapped_function.__name__, (te - ts) * 1000)
+    print('>> Audit time: %r  %2.2f ms' % (wrapped_function.__name__, (te - ts) * 1000))
     return result
 
 

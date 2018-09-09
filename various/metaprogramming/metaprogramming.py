@@ -1,12 +1,19 @@
 from flask import Flask
+from nltk import Model
 from passlib.handlers.pbkdf2 import pbkdf2_sha256
 from flask_babel import _
-from appkernel import Property, Model, MongoRepository, Service, UniqueIndex, Email, NotEmpty, content_hasher, \
-    AppKernelEngine, Regexp, CurrentSubject, ServiceException, Anonymous, Role
-from appkernel.service import link
 
 
-class User(Model, MongoRepository, Service):
+
+def action(http_method, require):
+    pass
+
+
+class MongoRepository(object):
+    pass
+
+
+class User(Model, MongoRepository):
     id = Property(str)
     name = Property(str, required=True, index=UniqueIndex)
     email = Property(str, validators=[Email], index=UniqueIndex)
@@ -14,7 +21,7 @@ class User(Model, MongoRepository, Service):
                         converter=content_hasher(), omit=True)
     roles = Property(list, sub_type=str, default_value=['Login'])
 
-    @link(http_method='POST', require=[CurrentSubject(), Role('admin')])
+    @action(method='POST', require=[CurrentSubject(), Role('admin')])
     def change_password(self, current_password, new_password):
         if not pbkdf2_sha256.verify(current_password, self.password):
             raise ServiceException(403, _('Current password is not correct'))
@@ -23,7 +30,7 @@ class User(Model, MongoRepository, Service):
             self.save()
         return _('Password changed')
 
-    @link(require=Anonymous())
+    @action(require=Anonymous())
     def get_description(self):
         return self.description
 

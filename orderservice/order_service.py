@@ -1,13 +1,13 @@
 from datetime import datetime
 
-from money import Money
-
 from appkernel import MongoRepository, Model, Property, create_uuid_generator, date_now_generator, NotEmpty
 from appkernel.configuration import config
 from appkernel.http_client import HttpClientServiceProxy
-from order_service import Reservation
-from order_service import Product, PaymentMethod, Address, Payment
-from order_service.shipping_service import Shipping
+from money import Money
+
+from orderservice.models import Product, PaymentMethod, Address, Payment
+from orderservice.shipping_service import Shipping
+from orderservice.inventory_service import Reservation
 
 
 class AuthorisationRequest(Model):

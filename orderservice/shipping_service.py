@@ -3,8 +3,10 @@ from datetime import datetime
 
 from appkernel import date_now_generator, NotEmpty, Role, create_custom_error
 from appkernel.http_client import HttpClientServiceProxy
-from appkernel.model import Model, Property, resource
-from order_service import Address
+from appkernel import Model, Property
+from appkernel.model import resource
+
+from orderservice.models import Address
 
 client = HttpClientServiceProxy('http://127.0.0.1:5000/')
 

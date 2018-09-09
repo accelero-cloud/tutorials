@@ -1,9 +1,12 @@
-from flask import Flask
+#!/usr/bin/env python3
 
 from appkernel import AppKernelEngine
-from order_service import InventoryService, Order
-from order_service import PaymentService
-from order_service import ShippingService
+from flask import Flask
+
+from orderservice.inventory_service import InventoryService
+from orderservice.order_service import Order
+from orderservice.payment_service import PaymentService
+from orderservice.shipping_service import ShippingService
 
 if __name__ == '__main__':
     app_id = "{} Service".format(Order.__name__)

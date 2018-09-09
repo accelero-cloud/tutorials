@@ -1,13 +1,13 @@
 from datetime import datetime
 from enum import Enum
 
-from money import Money
-
 from appkernel import MongoRepository, Model, Property, date_now_generator, create_uuid_generator, NotEmpty, \
     AppKernelEngine, Role
 from appkernel.configuration import config
 from appkernel.model import action
-from order_service import Product, ProductSize
+from money import Money
+
+from orderservice.models import ProductSize, Product
 
 
 class ReservationException(Exception):

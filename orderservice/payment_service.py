@@ -1,7 +1,8 @@
 import uuid
 from appkernel import Role
 from appkernel.model import resource
-from order_service import AuthorisationRequest
+
+from orderservice.order_service import AuthorisationRequest
 
 
 class PaymentService(object):

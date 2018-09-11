@@ -24,6 +24,8 @@ docker start mongo
 
 ### Virtual environment and required packages
 ```bash
+git clone git@github.com:accelero-cloud/tutorials.git
+cd tutorials
 virtualenv -p python3 venv
 source venv/bin/activate
 pip install -U appkernel

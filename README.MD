@@ -1,7 +1,7 @@
 # Tutorial
 
 The following tutorial contains 4 microservices implemented with the help of
-[appkernel](https://github.com/), which together serve as a product order-processing, 
+[appkernel](https://github.com/accelero-cloud/appkernel), which together serve as a product order-processing, 
 payment and shipping solution.
   
 

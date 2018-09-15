@@ -7,12 +7,14 @@ payment and shipping solution.
 
 ![microservices](./doc/assets/tutorial.png)
 
-The [Order Service](./orderservice/order_service.py) is responsible for receiving the original request and orchestrate 
+The [Order Service](checkout/orders/order_service.py) is responsible for receiving the original request and orchestrate 
 the process with all the other services:
-1. reserve the products in the [Inventory Service](./orderservice/inventory_service.py);
-2. carry out the payment, using the [Payment Service](./orderservice/payment_service.py);
-3. request the shipping of the goods at the [Shipping Service](./orderservice/shipping_service.py);
-4. the [Shipping Service](./orderservice/shipping_service.py) will finalise the reservation at the [Inventory Service](./orderservice/inventory_service.py);
+1. reserve the products in the [Inventory Service](checkout/inventory/inventory_service.py);
+2. carry out the payment, using the [Payment Service](checkout/payments/payment_service.py);
+3. request the shipping of the goods at the [Shipping Service](checkout/shipping/shipping_service.py);
+4. the [Shipping Service](checkout/shipping/shipping_service.py) will finalise the reservation at the [Inventory Service](checkout/inventory/inventory_service.py);
+
+# Run it in your development environment
 
 ## Install requirements
 
@@ -101,3 +103,9 @@ Date: Tue, 11 Sep 2018 14:17:43 GMT
   "result": "Oc2e5b438-8d12-4533-b085-c38add1e126d"
 }
 ```
+
+# Run it as a set of docker services
+
+
+## Notes:
+with minimal code we get logging, configuration, command line management, etc.

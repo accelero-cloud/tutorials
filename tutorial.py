@@ -3,12 +3,13 @@
 from appkernel import AppKernelEngine
 from flask import Flask
 
-from orderservice.inventory_service import InventoryService
-from orderservice.order_service import Order
-from orderservice.payment_service import PaymentService
-from orderservice.shipping_service import ShippingService
+from checkout import InventoryService
+from checkout import Order
+from checkout import PaymentService
+from checkout import ShippingService
 
 if __name__ == '__main__':
+    # starts all 4 services to make the running of this tutorial simpler
     app_id = "{} Service".format(Order.__name__)
     kernel = AppKernelEngine(app_id, app=Flask(app_id), development=True, enable_defaults=True)
     kernel.register(Order, methods=['GET', 'POST', 'DELETE'])

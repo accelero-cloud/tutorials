@@ -75,16 +75,16 @@ class PaymentService(object):
         time.sleep(service_performance)
         authorised = summon_chaos_monkey()
         if authorised:
-            print('... authorised payment for card number: {}'.format(order.card_number))
+            print('... authorised payments for card number: {}'.format(order.card_number))
         else:
-            print('!!! payment for card {} is declined.'.format(order.card_number))
+            print('!!! payments for card {} is declined.'.format(order.card_number))
         return authorised
 
     @staticmethod
     def reverse_payment(order):
         # simulate magic
         time.sleep(service_performance)
-        print('... reversed payment for card number: {}'.format(order.card_number))
+        print('... reversed payments for card number: {}'.format(order.card_number))
         return True
 
 

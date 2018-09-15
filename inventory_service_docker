@@ -1,0 +1,12 @@
+FROM ubuntu:latest
+RUN apt-get update -y
+RUN apt-get install -y python-pip python-dev build-essential
+COPY ./checkout/ /checkout/app
+COPY ./start_inventory_service.py /app/app.py
+RUN chmod +x /app/app.py
+COPY ./requirements.txt /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE 5000
+ENTRYPOINT ["python"]
+CMD ["app.py"]

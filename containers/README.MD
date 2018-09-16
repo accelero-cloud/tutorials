@@ -164,3 +164,9 @@ docker stop shipping payments inventory orders
 docker rm shipping payments inventory orders
 docker rmi shipping payments inventory orders
 ```
+
+You might also want to delete the log files:
+
+```bash
+rm ./logs/*
+```

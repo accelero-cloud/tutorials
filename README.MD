@@ -14,17 +14,20 @@ the process with all the other services:
 3. request the shipping of the goods at the [Shipping Service](checkout/shipping/shipping_service.py);
 4. the [Shipping Service](checkout/shipping/shipping_service.py) will finalise the reservation at the [Inventory Service](checkout/inventory/inventory_service.py);
 
-# Run it in your development environment
+With a minimal amount code we get logging, configuration, command line management, persistence, REST communication and much more.
+For more details check out the [roadmap](https://github.com/accelero-cloud/appkernel/blob/master/docs/roadmap.md).
 
-## Install requirements
+## Run it in your development environment
 
-### Docker image for Mongo DB
+### Install requirements
+
+#### Docker image for Mongo DB
 ```bash
 docker create -v ~/data:/data/db -p 27017:27017 --name mongo mongo
 docker start mongo
 ```
 
-### Virtual environment and required packages
+#### Virtual environment and required packages
 ```bash
 git clone git@github.com:accelero-cloud/tutorials.git
 cd tutorials
@@ -34,7 +37,7 @@ pip install -U appkernel
 pip install money
 ```
 
-## Start the services
+#### Start the services
 ```bash
 python3 order_service_tutorial.py
 ```
@@ -104,8 +107,6 @@ Date: Tue, 11 Sep 2018 14:17:43 GMT
 }
 ```
 
-# Run it as a set of docker services
+## Run it as a set of docker services
 
-
-## Notes:
-with minimal code we get logging, configuration, command line management, etc.
+[Check out the details here](https://github.com/accelero-cloud/tutorials/tree/master/containers)

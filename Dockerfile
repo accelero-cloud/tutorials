@@ -13,5 +13,7 @@ RUN apk --no-cache add --virtual build-dependencies
 RUN pip install -U gevent appkernel
 RUN pip install -U money
 
+RUN mkdir /logs
+VOLUME /logs
 WORKDIR /app
 COPY ./checkout /app/checkout

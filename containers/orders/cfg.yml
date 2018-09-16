@@ -1,4 +1,6 @@
 appkernel:
+  logging:
+    file_name: ../logs/orders.log
   mongo:
     host: mongo
     db: orders

@@ -1,0 +1,9 @@
+appkernel:
+  mongo:
+    host: mongo
+    db: payments
+  services:
+    orders: http://orders:5000/
+    inventory: http://inventory:5000/
+    payments: http://payments:5000/
+    shipping: http://shipping:5000/

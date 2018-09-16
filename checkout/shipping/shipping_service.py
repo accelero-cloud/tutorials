@@ -2,13 +2,13 @@ import uuid
 from datetime import datetime
 
 from appkernel import date_now_generator, NotEmpty, Role, create_custom_error
-from appkernel.http_client import HttpClientServiceProxy
 from appkernel import Model, Property
 from appkernel.model import resource
 
 from checkout.core.models import Address
+from checkout.core.util import get_client_proxy
 
-client = HttpClientServiceProxy('http://127.0.0.1:5000/')
+client = inventory_client = get_client_proxy('inventory')
 
 
 class Shipping(Model):

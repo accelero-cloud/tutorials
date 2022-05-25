@@ -34,7 +34,7 @@ numpy==1.15.1
 passlib==1.7.1
 pycares==2.3.0
 pycparser==2.18
-PyJWT==1.6.4
+PyJWT==2.4.0
 pymongo==3.7.1
 pytz==2018.5
 PyYAML==3.13
